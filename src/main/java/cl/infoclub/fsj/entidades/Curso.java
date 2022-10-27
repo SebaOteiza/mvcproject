@@ -3,6 +3,8 @@ package cl.infoclub.fsj.entidades;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,22 +16,21 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "curso")
-
-
 public class Curso {
 	
 	@Id
 	@Column(name = "id_curso")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCurso;
 	
 	
 	@Basic
-	@Column(name = "descripcion")
+	@Column
 	private String descripcion;
 	
 	
 	@Basic
-	@Column(name = "precio")
+	@Column
 	private double precio;
 	
 
